@@ -103,7 +103,7 @@ export default function App() {
               <div className="flex items-start gap-2.5">
                 <Compass className="w-4 h-4 text-retro-orange mt-1 shrink-0" />
                 <p className="text-xs text-retro-cream/70">
-                  <strong>In caso di pioggia:</strong> Le proiezioni verranno rinviate al martedì successivo o ospitate nella sala comunale al coperto.
+                  <strong>In caso di pioggia:</strong> Le proiezioni verranno rinviate al martedì successivo o riprogrammate in base alla disponibilità.
                 </p>
               </div>
             </div>
