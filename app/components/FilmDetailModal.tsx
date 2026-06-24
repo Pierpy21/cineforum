@@ -70,21 +70,24 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+    // Gestione dello scroll mobile sul container principale fixed
+    <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-4 overflow-y-auto custom-scrollbar">
       <div
         onClick={onClose}
         className="fixed inset-0 bg-retro-navy/85 backdrop-blur-md transition-opacity duration-300"
       />
 
-      {/* Main Card Container - Altezza fluida (h-auto) per bilanciare i contenuti */}
-      <div className="relative bg-retro-cream text-retro-navy w-full max-w-3xl min-w-[280px] rounded-3xl overflow-hidden shadow-2xl border-4 border-retro-cream z-10 animate-scale-up grid grid-cols-1 md:grid-cols-12 h-auto max-h-[90vh] md:max-h-[85vh]">
+      {/* Modificato: Rimosso max-h bloccante su mobile (lasciato solo da md in su).
+        Aggiunto my-auto per centrarlo se entra nello schermo, altrimenti scorre.
+      */}
+      <div className="relative bg-retro-cream text-retro-navy w-full max-w-3xl min-w-[280px] rounded-3xl overflow-hidden shadow-2xl border-4 border-retro-cream z-10 animate-scale-up grid grid-cols-1 md:grid-cols-12 h-auto my-auto md:max-h-[85vh]">
         
         {/* --- COLONNA DI SINISTRA --- */}
+        {/* Ridotto min-h su mobile (da 350px a 240px) per non spingere i testi troppo in basso */}
         <div
-          className="md:col-span-5 flex flex-col p-6 md:p-8 text-retro-cream relative overflow-hidden min-h-[350px] md:min-h-full"
+          className="md:col-span-5 flex flex-col p-6 md:p-8 text-retro-cream relative overflow-hidden min-h-[240px] md:min-h-full"
           style={{ backgroundColor: film.imageColor }}
         >
-          {/* Pattern di sfondo fallback */}
           {!film.imagePath && (
             <div className="absolute inset-0 striped-pattern opacity-15 pointer-events-none z-0" />
           )}
@@ -98,7 +101,7 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
             <X className="w-5 h-5" />
           </button>
 
-          {/* 1. SEZIONE ALTO: Data e Ora nel flusso del layout */}
+          {/* 1. SEZIONE ALTO: Data e Ora */}
           <div className="relative z-20 flex flex-col items-start gap-1.5 text-left shrink-0 mb-4 pr-10">
             <div className="bg-retro-orange text-retro-cream font-display font-bold text-[11px] md:text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md">
               {film.date}
@@ -109,8 +112,8 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
             </div>
           </div>
 
-          {/* 2. SEZIONE CENTRO: Immagine dinamica (flex-grow) */}
-          <div className="relative flex-grow w-full z-10 min-h-[180px]">
+          {/* 2. SEZIONE CENTRO: Immagine */}
+          <div className="relative flex-grow w-full z-10 min-h-[140px] md:min-h-[180px]">
             {film.imagePath ? (
               <Image
                 src={film.imagePath}
@@ -127,7 +130,7 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
             )}
           </div>
 
-          {/* 3. SEZIONE BASSO: Rating e Location nel flusso del layout */}
+          {/* 3. SEZIONE BASSO: Location */}
           <div className="relative z-20 flex flex-col items-start gap-1.5 text-left shrink-0 mt-4">
             <p className="text-[10px] font-mono tracking-widest uppercase text-retro-cream/90 drop-shadow-sm">
               Parco Urbano Peppino Impastato Belpasso (CT)
@@ -136,7 +139,8 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
         </div>
 
         {/* --- COLONNA DI DESTRA --- */}
-        <div className="md:col-span-7 p-6 md:p-8 flex flex-col h-auto max-h-[90vh] md:max-h-[85vh] overflow-y-auto bg-retro-cream">
+        {/* Modificato: rimosso overflow-y-auto su mobile (diventa h-auto fluido), si attiva solo su desktop (md:overflow-y-auto) */}
+        <div className="md:col-span-7 p-6 md:p-8 flex flex-col h-auto md:max-h-[85vh] md:overflow-y-auto bg-retro-cream">
           
           {/* Top Close Button Desktop */}
           <div className="hidden md:flex justify-end mb-2 shrink-0">
@@ -201,7 +205,7 @@ export const FilmDetailModal: React.FC<FilmDetailModalProps> = ({ film, onClose 
             </div>
           </div>
 
-          {/* Bottoni ancorati al fondo grazie a mt-auto */}
+          {/* Bottoni ancorati al fondo */}
           <div className="border-t border-retro-navy/10 pt-4 flex flex-col sm:flex-row gap-3 mt-auto shrink-0">
             <button
               onClick={handleSaveReminder}

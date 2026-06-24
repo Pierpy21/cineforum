@@ -11,11 +11,7 @@ export const Header: React.FC<HeaderProps> = ({ onExploreClick, onNewsletterClic
   return (
     <header className="relative bg-retro-navy text-retro-cream overflow-hidden border-b-4 border-retro-orange flex flex-col items-center">
       {/* Top Film Strip Border notched design */}
-      <div className="absolute top-0 left-0 right-0 h-4 bg-retro-cream flex justify-between px-2 overflow-hidden select-none z-10">
-        {Array.from({ length: 48 }).map((_, i) => (
-          <div key={i} className="w-5 h-2.5 bg-retro-navy rounded-sm shrink-0" />
-        ))}
-      </div>
+
 
       {/* Sfondo decorativo */}
       <div className="absolute inset-0 dots-pattern opacity-10 pointer-events-none" />
