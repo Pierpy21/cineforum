@@ -11,7 +11,17 @@ interface FilmCardProps {
 
 // ... (Il tuo FilmIllustration rimane identico) ...
 export const FilmIllustration: React.FC<{ type: Film["illustrationType"]; activeColor?: string }> = ({ type, activeColor = "#D95D39" }) => {
-  // ... (codice invariato)
+  switch (type) {
+    case "stars":
+      return <RetroStar/>;
+    case "reel":
+      return <FilmReel/>;
+    case "clapper":
+      return <Clapperboard />;
+    default:
+      // Fallback nel caso il type sia una delle altre stringhe (cinema, romance, ecc.)
+      return <FilmReel/>; 
+  }
 };
 
 export const FilmCard: React.FC<FilmCardProps> = ({ film, index, onSelect }) => {
