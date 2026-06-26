@@ -95,6 +95,7 @@ export const Footer = () => {
             fill 
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 20vw, 150px"
             className="object-contain" 
+            priority
           />
         </div>
         
