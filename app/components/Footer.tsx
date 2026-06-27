@@ -45,8 +45,6 @@ export const Footer = () => {
           <ul className="space-y-1.5 text-xs text-retro-cream/75 font-sans">
             <li>📍 Parco Urbano "Peppino Impastato", Belpasso (CT)</li>
             <li>🕒 Ogni Martedì ore 21:30 esatte</li>
-            <li>✉️ info@cineforumbelpasso.it</li>
-            <li>📞 Servizio Informazioni: +39 095 729111</li>
           </ul>
         </div>
       </div>

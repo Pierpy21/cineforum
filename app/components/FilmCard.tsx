@@ -53,7 +53,7 @@ export const FilmCard: React.FC<FilmCardProps> = ({ film, index, onSelect }) => 
             alt={`Locandina di ${film.title}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 20vw"
-            className="object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+            className="object-cover z-0 transition-transform duration-700  opacity-90 group-hover:opacity-100"
             priority={index < 3} // <-- Magia di Vercel: carica istantaneamente le prime 3 locandine
           />
         ) : (

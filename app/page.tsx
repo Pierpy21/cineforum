@@ -27,10 +27,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-retro-navy text-retro-cream font-sans selection:bg-retro-orange selection:text-retro-cream">
       
-      {/* --- RETRO HEADER SECTION --- */}
+  {/* --- RETRO HEADER SECTION --- */}
       <Header
         onExploreClick={() => handleScrollToSection("sezione-programmazione")}
         onNewsletterClick={() => handleScrollToSection("sezione-newsletter")}
+        nextFilm={filteredFilms[0]} // Passa il primo film della lista
+        onSelectFilm={setSelectedFilm} // <--- CORRETTO: Ora aggiorna lo stato e apre la modale!
       />
 
       {/* --- MAIN BODY GRID --- */}
