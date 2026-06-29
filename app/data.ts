@@ -2,23 +2,6 @@ import { Film } from "@/app/types";
 
 export const FILMS: Film[] = [
   {
-    id: "perfetti-sconosciuti",
-    title: "Perfetti Sconosciuti",
-    originalTitle: "Perfetti Sconosciuti",
-    director: "Paolo Genovese",
-    year: 2016,
-    duration: "97 min",
-    genre: ["Commedia", "Drammatico"],
-    date: "Martedì 7 Luglio",
-    time: "21:30",
-    plot: "Durante una cena tra amici storici, la padrona di casa propone un gioco rischioso: mettere tutti i propri smartphone sul tavolo e condividere pubblicamente ogni telefonata, sms o notifica in arrivo. Quello che comincia come un esperimento divertente si trasforma rapidamente in un implacabile disvelamento di ipocrisie e segreti.",
-    cast: ["Marco Giallini", "Kasia Smutniak", "Valerio Mastandrea", "Anna Foglietta", "Giuseppe Battiston"],
-    rating: 4,
-    imageColor: "#1A1A1A",
-    illustrationType: "clapper",
-    imagePath: "/images/perfetti-sconosciuti.jpg"
-  },
-  {
     id: "kung-fu-panda",
     title: "Kung Fu Panda",
     originalTitle: "Kung Fu Panda",
@@ -174,5 +157,22 @@ export const FILMS: Film[] = [
     imagePath: "/images/nemo.jpg"
 
 
+  },
+  {
+    id: "perfetti-sconosciuti",
+    title: "Perfetti Sconosciuti",
+    originalTitle: "Perfetti Sconosciuti",
+    director: "Paolo Genovese",
+    year: 2016,
+    duration: "97 min",
+    genre: ["Commedia", "Drammatico"],
+    date: "Martedì 29 Settembre",
+    time: "21:30",
+    plot: "Durante una cena tra amici storici, la padrona di casa propone un gioco rischioso: mettere tutti i propri smartphone sul tavolo e condividere pubblicamente ogni telefonata, sms o notifica in arrivo. Quello che comincia come un esperimento divertente si trasforma rapidamente in un implacabile disvelamento di ipocrisie e segreti.",
+    cast: ["Marco Giallini", "Kasia Smutniak", "Valerio Mastandrea", "Anna Foglietta", "Giuseppe Battiston"],
+    rating: 4,
+    imageColor: "#1A1A1A",
+    illustrationType: "clapper",
+    imagePath: "/images/perfetti-sconosciuti.jpg"
   }
 ];
