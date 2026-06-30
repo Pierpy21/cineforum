@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = 'https://cineforumbelpasso.it';
+  const baseUrl = 'https://www.cineforumbelpasso.it';
   
   return [
     {
