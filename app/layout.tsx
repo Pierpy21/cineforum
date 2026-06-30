@@ -25,6 +25,9 @@ export const metadata = {
     icon: '/public/icon.png', 
     apple: '/public/icon.png', 
   },
+  verification: {
+    google: 'm31Ac7GaLHeVNvrwu5DniLU-TByx5swpyZ0igyGyfGg',
+  },
 
   keywords: [
     'Cineforum Belpasso', 
