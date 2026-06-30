@@ -9,6 +9,7 @@ import { FilmDetailModal } from "./components/FilmDetailModal";
 import { Newsletter } from "./components/Newsletter";
 import { RetroStar, FilmReel } from "./components/RetroIllustration";
 import { MapPin, Compass, Ticket } from "lucide-react";
+import { Navbar } from "./components/Navbar";
 
 export default function App() {
   const [selectedFilm, setSelectedFilm] = useState<Film | null>(null);
@@ -28,6 +29,7 @@ export default function App() {
     <div className="min-h-screen bg-retro-navy text-retro-cream font-sans selection:bg-retro-orange selection:text-retro-cream">
       
   {/* --- RETRO HEADER SECTION --- */}
+      <Navbar />
       <Header
         onExploreClick={() => handleScrollToSection("sezione-programmazione")}
         onNewsletterClick={() => handleScrollToSection("sezione-newsletter")}

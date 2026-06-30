@@ -21,12 +21,12 @@ export const Navbar: React.FC = () => {
     <header className="w-full bg-retro-navy border-b border-retro-cream/10 sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* LOGO: Cliccando qui si torna alla Home */}
+        {/* LOGO: Torna in cima alla home */}
         <Link 
           href="/" 
           className="font-display font-extrabold text-xl sm:text-2xl tracking-tighter text-retro-cream hover:text-retro-orange transition-colors uppercase"
         >
-          Retro<span className="text-retro-orange">Cinema</span>
+          Cine<span className="text-retro-orange">Forum</span>
         </Link>
 
         {/* CONTENITORE NAVBAR DESTRA (Dropdown) */}
@@ -59,8 +59,9 @@ export const Navbar: React.FC = () => {
                 <div className="px-3 py-1.5 text-[10px] font-display font-extrabold text-retro-cream/40 uppercase tracking-widest">
                   Cinema & Palinsesto
                 </div>
-                <Link
-                  href="/programmazione"
+                {/* Cambiato in tag <a> con l'ancora #programmazione */}
+                <a
+                  href="#sezione-programmazione"
                   onClick={() => setIsOpen(false)}
                   className="group flex flex-col p-3 rounded-xl hover:bg-retro-slate border border-transparent hover:border-retro-cream/5 transition-all duration-200"
                 >
@@ -73,9 +74,9 @@ export const Navbar: React.FC = () => {
                     </span>
                   </div>
                   <p className="font-sans text-xs text-retro-cream/60 mt-1 leading-relaxed">
-                    I film in sala, gli orari delle proiezioni e le prossime rassegne.
+                    I film sotto le stelle, le date e gli orari delle proiezioni estive.
                   </p>
-                </Link>
+                </a>
               </div>
 
               {/* Divisore Stile Biglietto */}
@@ -89,8 +90,9 @@ export const Navbar: React.FC = () => {
                 <div className="px-3 py-1.5 text-[10px] font-display font-extrabold text-retro-cream/40 uppercase tracking-widest">
                   Community & News
                 </div>
-                <Link
-                  href="/newsletter"
+                {/* Cambiato in tag <a> con l'ancora #newsletter */}
+                <a
+                  href="#sezione-newsletter"
                   onClick={() => setIsOpen(false)}
                   className="group flex flex-col p-3 rounded-xl hover:bg-retro-slate border border-transparent hover:border-retro-cream/5 transition-all duration-200"
                 >
@@ -103,9 +105,9 @@ export const Navbar: React.FC = () => {
                     </span>
                   </div>
                   <p className="font-sans text-xs text-retro-cream/60 mt-1 leading-relaxed">
-                    Resta aggiornato sui nostri eventi speciali e approfondimenti critici.
+                    Resta aggiornato sui nostri eventi speciali e le iniziative in città.
                   </p>
-                </Link>
+                </a>
               </div>
 
             </div>
